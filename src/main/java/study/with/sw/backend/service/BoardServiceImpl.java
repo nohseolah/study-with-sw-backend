@@ -10,7 +10,7 @@ import study.with.sw.backend.entity.Board;
 import study.with.sw.backend.repository.BoardRepository;
 
 import java.util.List;
-
+//서비스 임플: 서버에서 연산하는 것
 @Service
 @Slf4j
 @AllArgsConstructor
@@ -27,4 +27,19 @@ public class BoardServiceImpl implements BoardService {
     public ApiResponse create(BoardRequestDto boardRequestDto) {
         return ApiResponse.success(boardRepository.save(boardRequestDto.create()));
     }
+
+    @Override
+    public ApiResponse delete(Long id) {
+       // 특정 아이디를 가진 게시물을 삭제
+        boardRepository.deleteById(id);
+        // API 성공 응답 내리기
+        return ApiResponse.ok();
+    }
+
+    @Override
+    public ApiResponse update(BoardRequestDto boardRequestDto) {
+        return ApiResponse.success(boardRepository.save(boardRequestDto.update()));
+    }
+
+
 }

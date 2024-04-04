@@ -22,4 +22,13 @@ public class BoardController {
         return boardService.create(boardRequestDto);
     }
 
+    @DeleteMapping("/board/{id}")    // PassParam url 경로에 있는 파라미터
+    public ApiResponse delete(@PathVariable("id") Long id){
+        return boardService.delete(id);
+    }
+
+    @PutMapping("/board")
+    public ApiResponse update(@RequestBody BoardRequestDto boardRequestDto){
+        return boardService.update(boardRequestDto);
+    }
 }

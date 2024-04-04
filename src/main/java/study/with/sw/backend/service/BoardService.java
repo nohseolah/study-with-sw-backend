@@ -8,4 +8,8 @@ public interface BoardService {
     ApiResponse readAll();
 
     ApiResponse create(BoardRequestDto boardRequestDto);
+
+    ApiResponse delete(Long id);
+
+    ApiResponse update(BoardRequestDto boardRequestDto);
 }

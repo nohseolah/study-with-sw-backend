@@ -20,4 +20,13 @@ public class BoardRequestDto {
                 .authorId(authorId)
                 .build();
     }
+
+    public Board update(){
+        return Board.builder()
+                .title(title)
+                .content(content)
+                .authorId(authorId)
+                .id(id)
+                .build();
+    }
 }
